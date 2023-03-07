@@ -12,6 +12,6 @@ export class LoginService {
   //Check if user exists
 
   //If !user - Create user
-  
+
   //If user || user created- continue (Store user)
 }
