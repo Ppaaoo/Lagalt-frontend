@@ -26,6 +26,7 @@ export class LoginService {
         )
   }
 
+  //Check if user exists
   private checkUsername(username: string): Observable<User | undefined> {
     return this.http.get<User[]>(`${apiUsers}?username=${username}`)
     .pipe(
@@ -33,6 +34,7 @@ export class LoginService {
     )
   }
 
+  //Create user
   private createUser(username: string): Observable<User> {
     const user = {
       username,
