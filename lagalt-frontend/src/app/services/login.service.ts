@@ -28,7 +28,7 @@ export class LoginService {
 
   //Check if user exists
   private checkUsername(username: string): Observable<User | undefined> {
-    return this.http.get<User[]>(`${apiUsers}?user=${username}`)
+    return this.http.get<User[]>(`${apiUsers}?name=${username}`)
     .pipe(
       map((response: User[]) => response.pop())
     )
@@ -41,7 +41,7 @@ export class LoginService {
     };
     const headers = new HttpHeaders({
       "Content-Type": "application/json",
-      "x-api-ker": apiKey
+      //"x-api-key": apiKey
     });
 
     return this.http.post<User>(apiUsers, user, { headers })
