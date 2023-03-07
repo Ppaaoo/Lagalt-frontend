@@ -16,9 +16,6 @@ export class LoginFormComponent {
 
     const { username } = loginForm.value;
 
-    console.log(username);
-    return;
-
       this.loginService.login(username)
         .subscribe({
           next: (user: User) => {
